@@ -4,7 +4,7 @@ ENDIF ; いいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいいい
 
     __UNICODE__ equ 1
 
-    include \masm32\include\masm32rt.inc
+    ;include \masm32\include\masm32rt.inc
 
 	.data
 
