@@ -4,6 +4,7 @@ Assembly Language Programming Course
 
 ### Running the Projects
 
-* Make sure you have [masm32](http://www.masm32.com/masmdl.htm) installed in `C:/masm32/` (the default location)
+* Make sure you have [masm32](http://www.masm32.com/masmdl.htm) installed to `T:/masm32/` (NOT the default location)
 * Open the Project file in Visual Studio
-* Press __CTRL-F5__ to run a project (this will keep the console from closing instantly after it pops up)
+* Set a breakpoint in the Main.asm file
+* Add a register or variable to the local watches to see it's value
