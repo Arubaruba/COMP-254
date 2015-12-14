@@ -1,44 +1,48 @@
-Title(Ex08c)
+Title(Ex10)
 
 .model flat
 .stack 100h
+
 .data
-array1 db 0,1,2,3,4,5,6,7,8,9
-array1_len = $ - array1
+array1 db 1,2,3,4
+	   db 5,6,7,8
+	   db 9,10,11,12
+	   
+array2 db 1,2,3,4
+	   db 5,6,7,8
+	   db 9,10,11,12
 
-array2 db 2,4,6,8
-array2_len = $ - array2
+array3 db 12 dup(0)
 
-array3 db 10 dup (?)
+ROWS = 3
+COLS = 4
+ARRAY_SIZE = 12
 
 .code
 main proc
 	
-	mov ecx, array1_len
-	
+	mov ebx, 0
+	mov esi, 0
+
 	loop1:
+	mov al, array1[ebx][esi]
+	add al, array2[ebx][esi]
+	mov array3[ebx][esi], al
 	
-	; Add one value from array1 and all values from array2 in al
-	mov al, array1[ecx - 1]
-	mov array3[ecx], al
+	inc esi
+	
+	cmp esi, COLS
+	
+	jne loop1
+	mov esi, 0
+	add ebx, COLS
+	
+	cmp ebx, ROWS
 
-	; Nested loop
-	push ecx
-
-	mov ecx, array2_len
-	mov bl, 0
-
-	loop2:
-	add bl, array2[ecx - 1]
-	loop loop2
-
-	add array3[ecx], bl
-
-	pop ecx
+	jne loop1
 
 	
-	loop loop1
-
 	mov eax, 1
+	
 main endp
 end main

@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Ex04.asm.16 = Ex04.asm.16
 		Ex05.asm = Ex05.asm
 		Ex05.asm.16 = Ex05.asm.16
+		Ex08.asm = Ex08.asm
 		Ex08c.asm.asm = Ex08c.asm.asm
+		Ex09.asm = Ex09.asm
 		README.md = README.md
 	EndProjectSection
 EndProject
