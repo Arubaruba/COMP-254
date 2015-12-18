@@ -1,33 +1,29 @@
-Title (Ex06.asm)
+Title (Ex05.asm)
 
 .model flat
 .stack 100h
 .data
+Abytes1 db 10h, 20h, 30h, 40h
+Abytes1_len = $ - Abytes1
+Awords1 dw 100h, 200h, 300h, 400h
+Awords1_len = $ - Awords1
 
-stringA db "Assembly Language is a useful and interesting course. I will student and get an A in COMP-254.!!!!" 
-count = $ - stringA
-stringB db count dup(?)
+Res1a db ?
+Res1b db ?
+Res2a dw ?
+Res2b dw ?
+Res3 dw ?
 
 .code
 main proc
-
-mov ecx, count
-
-; Pointers to the beginnings of the strings
-mov esi, offset stringA
-mov ebx, offset stringB
-
-loop1:
-
-; Copy stringA to stringB using al as a temp var
-mov al, [esi]
-mov [ebx], al
-
-; Increment the pointers to the strings
-inc esi
-inc ebx
-
-Loop loop1
+	
+	mov ebx, Awords1_len
+	mov ecx, Abytes1_len
+	
+	mov eax, 0
+	mov al, Abytes1[2]
+	
+	add eax, 10
 
 main endp
 end main
